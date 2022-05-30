@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedorBusca{
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap;
+    gap: 3%;
+    padding-bottom: 3%;
+    justify-content: center;
+}
+
+.busquedaDedicada{
+    width: 30%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s linear;
+}
+
+.busquedaDedicada a{
+    width: 100%;
+}
+
+
+.busquedaDedicada .imagen:hover{
+    transform: scale(1.02);
+    transition: transform 0.2s linear;
+}
+
+.noticia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    border-radius: 10px;
+}
+
+.imagen{
+    width: 100%;
+    padding: 2%;
+    border-radius: 10px;
+    transition: transform 0.2s linear;
+}
+
+.imagen img{
+    width: 100%;
+}
+
+.tituloBusqueda{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    padding-bottom: 0;
+    width: 100%;
+}
+
+.tituloBusqueda a p{
+    width: fit-content;
+}
+
+.tituloBusqueda i{
+    cursor: pointer;
+}
+
+@media screen and (min-width:850px) {
+    .contenedorBusca{
+        width: 75%;
+    }
+}

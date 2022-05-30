@@ -1,0 +1,308 @@
+/*
+* Fondo: #FAF8F7
+* Header: #0A1940
+* Resalto: #0A1940
+* Contenedores: #465987
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-right: 5%;
+}
+
+/*Inicio del popup de listas*/
+
+.misListasPopup{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2%;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.misListasPopup p{
+    padding-left: 1%;
+    padding-top: 1%;
+    font-size: 1.5em;
+}
+
+.contenedorMisListasPopup{
+    display: flex;
+    width: 90%;
+}
+
+.masButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.masButton i{
+    cursor: pointer;
+    font-size: 2em;
+}
+
+/*Fin del popup de listas*/
+
+/* Ventana de ver más */
+
+.opciones{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+/* Fin de ventana ver más */
+
+/* Inicio selects */
+
+.selectCat, .selectOrden{
+    border-radius: 5px;
+    width: 20%;
+}
+
+.selectCat{
+    margin-left: 5%;
+}
+
+.selectOrden{
+    margin-left: 10%;
+}
+
+/* Fin Selects */
+
+.selects{
+    height: 5%;
+    width: 100%;
+}
+
+.crearLista{
+    display: none;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 35%;
+    top: 40%;
+    border-radius: 10px;
+}
+
+.botonCreaLista{
+    margin: auto;
+    margin-top: 25px;
+}
+
+.detallesLista{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    background-color: #0A1940;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.filtrar{
+    padding: 0.5% 1%;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.titAnime i{
+    color: #0A1940;
+    cursor: pointer;
+}
+
+.titAnime p{
+    width: fit-content;
+}
+
+.izquierda{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.cabeceraLista{
+    display: flex;
+    width: 90%;
+    padding-top: 5%;
+}
+
+.imagenLista{
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.titLista{
+    color: #FAF8F7;
+    width: 70%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+.animesLista{
+    height: 70%;
+}
+
+.verTodo{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 95%;
+}
+
+.contenedorAnimes{
+    display: flex;
+    flex-direction: column;
+}
+
+.anime{
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.titAnime{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgAnime{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contenedorImagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 2%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.animeA{
+    width: 30%;
+}
+
+.imagen{
+    transition: transform 0.2s linear;
+}
+
+.animeA:hover a .imagen{
+    transform: scale(1.02);
+    transition: transform 0.2s linear;
+}
+
+.contenedorASecas{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1%;
+    flex-wrap: wrap;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.formNextPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextPage{
+    border: 0;
+    border-radius: 10px;
+    padding: 2% 4%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.nextPage:hover{
+    background-color: #2e406e;
+}
+
+.formSelect{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media screen and (min-width:850px) {
+
+    .detallesLista{
+        width: 20%;
+        right: 45%;
+    }
+
+    .cabeceraLista{
+        padding-left: 10%;
+    }
+
+    .contenedorListas{
+        width: 75%;
+        flex-direction: row;
+    }
+    .misListasPopup{
+        width: 20%;
+        right: 40%;
+    }
+
+    .selectCat, .selectOrden{
+        width: 10%;
+        height: 5%;
+    }
+
+    .selectOrden{
+        margin-left: 0%;
+    }
+
+    .opciones{
+        width: 10%;
+    }
+    .crearLista{
+        width: 200px;
+        height: 150px;
+        right: 45%;
+        top: 40%;
+    }
+    
+    .botonCreaLista{
+        margin: auto;
+        margin-top: 25px;
+    }
+    .izquierda{
+        width: 75%;
+    }
+}

@@ -1,0 +1,247 @@
+/*
+* Fondo: #FAF8F7
+* Header: #0A1940
+* Resalto: #0A1940
+* Contenedores: #465987
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 5%;
+}
+
+.contenedor{
+    display: flex;
+    padding-right: 50px;
+}
+
+.imagenAnime{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 2%;
+}
+
+.imagenAnime img{
+    width: 95%;
+}
+
+.contenedorCategorias{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    flex-wrap: wrap;
+    padding-top: 2%;
+}
+
+.cat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 5px;
+    height: fit-content;
+    font-size: 0.9em;
+    margin-bottom: 2%;
+}
+
+.addButton{
+    width: fit-content;
+}
+
+.addButton p{
+    display: none;
+}
+
+.masButton{
+    width: fit-content;
+    position: relative;
+    margin-bottom: 100%;
+    margin-top: 100%;
+}
+
+.masButton i{
+    font-size: 2.5em;
+}
+
+.textoAnime{
+    width: calc(95% - 150px);
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crearLista{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 35%;
+    top: 40%;
+    border-radius: 10px;
+}
+
+.botonCreaLista{
+    margin: auto;
+    margin-top: 25px;
+}
+
+.detallesLista{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    background-color: #0A1940;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.cabeceraLista{
+    display: flex;
+    width: 90%;
+    padding-top: 5%;
+}
+
+.imagenLista{
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.titLista{
+    color: #FAF8F7;
+    width: 70%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+.animesLista, .listasLista{
+    height: 70%;
+}
+
+.verTodo{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 95%;
+}
+
+.descAnime i {
+    color: black;
+}
+
+footer{
+    display: none;
+}
+
+.titAnime{
+    width: 100%;
+    font-size: 2em;
+    text-align: left;
+}
+
+#estadoL{
+    width: 100%;
+    padding-bottom: 5px;
+}
+/* 
+body > .botonesNav{
+    display: none;
+} */
+@media screen and (min-width:850px) {
+
+    .detallesLista{
+        width: 20%;
+        right: 45%;
+    }
+
+    .cabeceraLista{
+        padding-left: 10%;
+    }
+
+    .contenedorListas{
+        width: 75%;
+        flex-direction: row;
+    }
+
+    .contenedor{
+        width: 75%;
+    }
+
+    .textoAnime{
+        width: calc(100% - 250px);
+        padding-top: 7.5%;
+        padding-left: 2%;
+    }
+
+    .imagenAnime{
+        width: 250px;
+        height: 350px;
+    }
+
+    .contenedorCategorias{
+        width: 250px;
+    }
+
+    .cat{
+        width: fit-content;
+        padding: 2% 3%;
+        margin-left: 1%;
+    }
+
+    .addButton{
+        width: 250px;
+        height: 50px;
+        background-color: #0A1940;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .masButton{
+        position: initial;
+    }
+
+    .masButton i{
+        font-size: 1.75em;
+        color: #FAF8F7;
+    }
+
+    .addButton p{
+        display: flex;
+        padding-left: 5%;
+        font-size: 1.3em;
+    }
+    .crearLista{
+        width: 200px;
+        height: 150px;
+        right: 45%;
+        top: 40%;
+    }
+    
+    .botonCreaLista{
+        margin: auto;
+        margin-top: 25px;
+    }
+}

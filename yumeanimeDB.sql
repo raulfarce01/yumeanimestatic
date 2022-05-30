@@ -1,0 +1,135 @@
+CREATE DATABASE IF NOT EXISTS yumeanimedb;
+
+USE yumeanimedb;
+
+CREATE TABLE IF NOT EXISTS user(
+    idUser INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(200) NOT NULL,
+    alias VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    passwd VARCHAR(100) NOT NULL,
+    imgPerfil LONGBLOB,
+    administrador INT(1) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS lista(
+    idLista INT PRIMARY KEY AUTO_INCREMENT,
+    nombreL VARCHAR(100) NOT NULL,
+    descL LONGTEXT,
+    fechaCreacL TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    idUser INT,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS userGuardaLista(
+    idLista INT,
+    idUser INT,
+    FOREIGN KEY (idLista) REFERENCES lista(idLista)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    PRIMARY KEY (idLista, idUser)
+);
+
+CREATE TABLE IF NOT EXISTS anime(
+    idAnime INT PRIMARY KEY AUTO_INCREMENT,
+    nombreA VARCHAR(200) NOT NULL,
+    descA LONGTEXT NOT NULL,
+    imgA LONGBLOB,
+    fechaCreacA TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    idUser INT, /*PARA HACER REFERENCIA AL CREADOR DEL ANIME EN LA WEB*/
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS animeLista(
+    idAnime INT,
+    idLista INT,
+    FOREIGN KEY (idLista) REFERENCES lista(idLista)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    PRIMARY KEY (idLista, idAnime)
+);
+
+CREATE TABLE IF NOT EXISTS userGustaAnime(
+    idAnime INT,
+    idUser INT,
+    FOREIGN KEY (idAnime) REFERENCES anime(idAnime)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    PRIMARY KEY (idAnime, idUser)
+);
+
+CREATE TABLE IF NOT EXISTS userComentaAnime(
+    idComentA INT PRIMARY KEY AUTO_INCREMENT,
+    idAnime INT,
+    idUser INT,
+    textoA LONGTEXT NOT NULL,
+    FOREIGN KEY (idAnime) REFERENCES anime(idAnime)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS noticia(
+    idNoticia INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(200) NOT NULL,
+    fechaCreacN TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    idUser INT,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS parrafo(
+    idParrafo INT PRIMARY KEY AUTO_INCREMENT,
+    contenido LONGTEXT NOT NULL,
+    idNoticia INT NOT NULL,
+    FOREIGN KEY (idNoticia) REFERENCES noticia(idNoticia)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS imagen(
+    idImagen INT PRIMARY KEY AUTO_INCREMENT,
+    codigo LONGBLOB NOT NULL,
+    idNoticia INT NOT NULL,
+    FOREIGN KEY (idNoticia) REFERENCES noticia(idNoticia)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS userGustaNoticia(
+    idNoticia INT,
+    idUser INT,
+    FOREIGN KEY (idNoticia) REFERENCES noticia(idNoticia)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    PRIMARY KEY (idNoticia, idUser)
+);
+
+CREATE TABLE IF NOT EXISTS userComentaNoticia(
+    idComentN INT PRIMARY KEY AUTO_INCREMENT,
+    idNoticia INT,
+    idUser INT,
+    textoN LONGTEXT NOT NULL,
+    FOREIGN KEY (idNoticia) REFERENCES noticia(idNoticia)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY (idUser) REFERENCES user(idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

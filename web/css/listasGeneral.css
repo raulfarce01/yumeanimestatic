@@ -1,0 +1,138 @@
+/*
+* Fondo: #FAF8F7
+* Header: #0A1940
+* Resalto: #0A1940
+* Contenedores: #465987
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedorListas{
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.masButton{
+    display: block;
+    width: 10%;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.masButton i{
+    color: #0A1940;
+}
+
+.detallesLista{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    background-color: #0A1940;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.cabeceraLista{
+    display: flex;
+    width: 90%;
+    padding-top: 5%;
+}
+
+.titLista{
+    color: #FAF8F7;
+    width: 70%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+.animesLista{
+    height: 70%;
+}
+
+.verTodo{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 95%;
+}
+
+.crearLista{
+    display: none;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 35%;
+    top: 40%;
+    border-radius: 10px;
+}
+
+.botonCreaLista{
+    margin: auto;
+    margin-top: 25px;
+}
+
+.contenedorLista{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.miniContenedorLista{
+    width: 100%;
+    height: 100%;
+}
+
+.imagenLista{
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.imagenLista img{
+    width: 100%;
+}
+
+.tituloLista{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media screen and (min-width:850px) {
+    .detallesLista{
+        width: 20%;
+        right: 45%;
+    }
+
+    .cabeceraLista{
+        padding-left: 10%;
+    }
+
+    .contenedorListas{
+        width: 75%;
+        flex-direction: row;
+    }
+
+    .crearLista{
+        width: 200px;
+        height: 150px;
+        right: 45%;
+        top: 40%;
+    }
+    
+    .botonCreaLista{
+        margin: auto;
+        margin-top: 25px;
+    }
+}
