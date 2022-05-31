@@ -107,7 +107,7 @@ La guía de estilo se encuentra en este: https://github.com/raulfarce01/yumeanim
 
 ## Base de Datos
 
-El modelo entidad - relación se puede encontrar en este enlace: https://github.com/raulfarce01/yumeanime/blob/main/YumeanimeE-R.png
+El modelo entidad - relación se puede encontrar en este enlace: https://github.com/raulfarce01/yumeanime/blob/main/yumeanimeE-R.png
 
 El grafo relacional se encuentra en este otro: https://github.com/raulfarce01/yumeanime/blob/main/Grafo%20Relacional%20Yumeanime.pdf
 En el último se explica qué era lo que faltaba para normalizar y el proceso para hacerlo.
